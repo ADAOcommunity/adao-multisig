@@ -17,6 +17,7 @@
  - [ ] Write script proof-of-concept
  - [ ] Tom shows it off -- create an awesome demo
  - [ ] Figure out how to manage staking rights after locking funds.
+ - [ ] [Build electron app](https://www.youtube.com/watch?v=kN1Czs0m1SU)
  
 ## Progress Notes
 
@@ -105,8 +106,36 @@ Tom's idea: allocate a portion of governance tokens to Holger's pool.
 }
 ```
 
+### Electron app
+
+[Setup](https://www.youtube.com/watch?v=kN1Czs0m1SU)
+
+The electron app needs to contact the Cardano Wallet API (or another
+API) to submit the transaction. It needs to store one's voting
+information. It must be able to sign transactions for the official
+vote. It might be bale forward them to a node that will submit the
+transaction. Otherwise, the file can merely be sent via other
+means. It needs to be able to send data to other members using the app
+to decide upon the official vote.
+
 ### Educational Microfinancing
 
 Let's look into this.
 
+### ADAO Voting Rules State Machine
 
+The State Machine can be located by finding the token that it
+contains. The state machine can be revised by voting to create a new
+state machine with different parameters.
+
+### Roadmap
+
+(This is tentative)
+
+ 1. Multisig wallet electron app.
+    1. Preleminary vote
+    2. Official vote to move forward with the winning preleminary vote
+       (must meet a certain quota of signatures).
+ 2. Smart contract with endpoints callable from the electron app.
+    1. This phase begins when everyone votes to transfer the from the
+       multisig wallet to a new address and issue tokens.

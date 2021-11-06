@@ -1,5 +1,13 @@
 # Use the API
 
+## API Reference
+
+```
+https://localhost:8090/v2/addresses
+```
+
+## Examples
+
 Here is an example taken from the [ppp](https://github.com/input-output-hk/plutus-pioneer-program/blob/main/code/week10/add.sh) program. I expect this to be the format that will work.
 
 ```sh

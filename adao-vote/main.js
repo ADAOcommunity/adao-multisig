@@ -1,18 +1,28 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
-const TrezorConnect = require('trezor-connect');
+const TrezorConnect = require('trezor-connect').default;
 
-const {app, BrowserWindow, Menu} = electron;
+const {app, BrowserWindow, Menu, ipcMain} = electron;
+
+process.env.NODE_ENV = 'test';
 
 let mainWindow;
 let addKey;
 
 // listen for app to be ready
 
-app.on('ready', function(){
+app.on('ready',  () => {
     //create window
-    mainWindow = new BrowserWindow({});
+    const mainWindow = new BrowserWindow({
+        width: 1000,
+        height: 600,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true
+        }
+    });
     // load html into window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'mainWindow.html'),
@@ -20,10 +30,14 @@ app.on('ready', function(){
         slashes: true
     }));
     // TrezorConnect requirement
-    TrezorConnect.manifest({
-        email: 'noahtjones@jonesfinancial.io',
-        appUrl: 'http://www.jonesfinancial.io/quick-vote'
-    });
+    // TrezorConnect.init({
+    //     connectSrc: 'https://localhost:8088/',
+    //     lazyLoad: true,
+    //     manifest: {
+    //         email: 'noahtjones@jonesfinancial.io',
+    //         appUrl: 'http://www.jonesfinancial.io/quick-vote'
+    //     }
+    // });
     // build menu
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     // Insert menu
@@ -56,6 +70,35 @@ const mainMenuTemplate = [
                     app.quit();
                 }
             }
+        ],
+        label:'Edit',
+        submenu: [
+            { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+            { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+            { type: "separator" },
+            { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+            { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+            { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+            { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
         ]
     }
 ];
+
+// if(process.platform == 'darwin'){
+//     mainMenuTemplate.unshift({});
+// };
+
+if(process.env.NODE_ENV !== "production"){
+    mainMenuTemplate.push({
+        label: 'Developer Tools',
+        submenu: [
+            {
+                label: 'Toggle Devtools',
+                accelerator: process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I',
+                click(item, focusedWindow){
+                    focusedWindow.toggleDevTools();
+                }
+            }
+        ]
+    })
+};

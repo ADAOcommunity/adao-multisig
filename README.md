@@ -121,6 +121,11 @@ to decide upon the official vote.
 [Support Trezor](https://wiki.trezor.io/Trezor_Connect_API) by
 incorporating their JavaScript.
 
+[Helpful for managing dependencies](https://webpack.electron.build/dependency-management) yes.
+
+[For the API requests](https://www.geeksforgeeks.org/http-rest-api-calls-in-electronjs/)
+
+
 ### Educational Microfinancing
 
 Let's look into this.

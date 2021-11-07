@@ -4,19 +4,21 @@
         <title>ADAO Vote</title>
         <script src="./renderer.js"></script>
         <script>
-            function trezorPubKey() {
-                try {
-                    var pubkey = Trezorconnect.cardanoGetPublicKey;
-                } catch (error) {
-                    var pubkey = "no trezor connected";
-                };
-                document.getElementById("pubKeyOutput").innerText(pubkey);
+            const electron = require('electron');
+            const url = require('url');
+            const path = require('path');
+            const TrezorConnect = require('trezor-connect').default;
+            const { app, BrowserWindow } = electron;
+            const { app, BrowserWindow } = TrezorConnect;
+            doStuff = function() {
+                document.getElementById("pubKeyOutput").innerHTML = "cui cui cui";
             };
         </script>
     </head>
     <body>
         <h1>Vote</h1>
-        <input type="submit" value="Get public key" class="pubKey">
-        <div id="pubKeyOutput"></div>
+        <button type="button" id="pubKey" onclick="doStuff()">test</button>
+        <button type="button" id="pubKey" onclick="trezorPubKey()">pubKey</button>
+        <div id="pubKeyOutput">ugh</div>
     </body>
 </html>

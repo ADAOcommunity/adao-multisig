@@ -1,0 +1,3 @@
+[submodule "adao-vote/connect"]
+	path = adao-vote/connect
+	url = https://github.com/trezor/connect.git

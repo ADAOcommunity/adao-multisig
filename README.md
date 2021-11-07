@@ -118,6 +118,9 @@ transaction. Otherwise, the file can merely be sent via other
 means. It needs to be able to send data to other members using the app
 to decide upon the official vote.
 
+[Support Trezor](https://wiki.trezor.io/Trezor_Connect_API) by
+incorporating their JavaScript.
+
 ### Educational Microfinancing
 
 Let's look into this.

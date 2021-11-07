@@ -1,3 +1,6 @@
 [submodule "adao-vote/connect"]
 	path = adao-vote/connect
 	url = https://github.com/trezor/connect.git
+[submodule "spacebudz"]
+	path = spacebudz
+	url = https://github.com/alessandrokonrad/spacebudz.git

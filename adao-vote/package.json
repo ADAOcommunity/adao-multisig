@@ -1,0 +1,11 @@
+{
+  "name": "adao-vote",
+  "version": "1.0.0",
+  "description": "electron app for adao",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Noah Jones",
+  "license": "MIT"
+}

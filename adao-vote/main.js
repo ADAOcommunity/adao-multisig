@@ -1,6 +1,7 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
+const TrezorConnect = require('trezor-connect');
 
 const {app, BrowserWindow, Menu} = electron;
 
@@ -18,6 +19,11 @@ app.on('ready', function(){
         protocol: 'file:',
         slashes: true
     }));
+    // TrezorConnect requirement
+    TrezorConnect.manifest({
+        email: 'noahtjones@jonesfinancial.io',
+        appUrl: 'http://www.jonesfinancial.io/quick-vote'
+    });
     // build menu
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     // Insert menu

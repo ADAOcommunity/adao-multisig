@@ -3,8 +3,20 @@
     <head>
         <title>ADAO Vote</title>
         <script src="./renderer.js"></script>
+        <script>
+            function trezorPubKey() {
+                try {
+                    var pubkey = Trezorconnect.cardanoGetPublicKey;
+                } catch (error) {
+                    var pubkey = "no trezor connected";
+                };
+                document.getElementById("pubKeyOutput").innerText(pubkey);
+            };
+        </script>
     </head>
     <body>
         <h1>Vote</h1>
+        <input type="submit" value="Get public key" class="pubKey">
+        <div id="pubKeyOutput"></div>
     </body>
 </html>

@@ -4,3 +4,9 @@
 [submodule "spacebudz"]
 	path = spacebudz
 	url = https://github.com/alessandrokonrad/spacebudz.git
+[submodule "adao-vote/cardano-js-sdk"]
+	path = adao-vote/cardano-js-sdk
+	url = https://github.com/input-output-hk/cardano-js-sdk.git
+[submodule "adao-vote/js-chain-libs"]
+	path = adao-vote/js-chain-libs
+	url = https://github.com/input-output-hk/js-chain-libs.git

@@ -125,6 +125,8 @@ incorporating their JavaScript.
 
 [For the API requests](https://www.geeksforgeeks.org/http-rest-api-calls-in-electronjs/)
 
+So now we just need to wrap up by adding the API requests and finishing the UI.
+
 
 ### Educational Microfinancing
 

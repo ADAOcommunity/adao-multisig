@@ -1,0 +1,14 @@
+# Meeting Notes
+
+They had excellent meeting with SEC lawyer.
+
+Need lawyer statement of intent or statement of opinion.
+
+Consider different locations based on securities laws.
+
+1. Generate governance token -- 25% to founders, then to min swap and airdrop sell etc.
+2. All money from sale goes into the multisig wallet
+3. All tokens give access to discord server
+4. Each token equals one vote
+5. Any proposal can be proposed 
+6. Small percentage to something like Liqwid, dex etc

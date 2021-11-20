@@ -10,3 +10,6 @@
 [submodule "adao-vote/js-chain-libs"]
 	path = adao-vote/js-chain-libs
 	url = https://github.com/input-output-hk/js-chain-libs.git
+[submodule "adao-vote"]
+	path = adao-vote
+	url = https://github.com/cardano-acropolis/adao-vote.git

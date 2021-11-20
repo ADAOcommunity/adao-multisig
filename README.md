@@ -127,6 +127,14 @@ incorporating their JavaScript.
 
 So now we just need to wrap up by adding the API requests and finishing the UI.
 
+#### Incorporating the cardano-js-sdk
+
+20211113133724NJ This is a work in progress. I finally have my system
+configured correctly.
+
+Documentation is located [here](https://input-output-hk.github.io/cardano-js-sdk/). 
+
+[This video](https://www.youtube.com/watch?v=GU-2T7k9NfI) was quite useful in learning about webpack. 
 
 ### Educational Microfinancing
 
